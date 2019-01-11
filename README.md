@@ -48,7 +48,7 @@ Internally, only one python process accesses the task DB when using multiprocess
 
 For large compute clusters, `cake` can be used with MPI like this
 ```bash
-mpirun -np <# of workers> cake run test.db --mpi
+mpirun -np <number of workers> cake run test.db --mpi
 ```
 By passing `--mpi`, cake internally has only one MPI task request work from the DB
 (and then distribute this work to the rest of the MPI tasks) in order to limit the number of threads
