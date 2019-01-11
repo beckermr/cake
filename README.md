@@ -1,7 +1,5 @@
 # cake
 
-[![Build Status](https://travis-ci.org/beckermr/cake.svg?branch=master)](https://travis-ci.org/beckermr/cake)
-
 featherweight task management for high throughput computing
 
 `cake` stores all tasks in a database (SQLite currently) on disk. Workers then request work
@@ -16,6 +14,7 @@ You use `cake` to load tasks like this
 ```python
 #!/usr/bin/env python
 import cake
+
 with cake.SQLiteTaskDB(name='test.db') as db:
     for i in range(100):
         db.add('echo %d && sleep 1' % (i))
